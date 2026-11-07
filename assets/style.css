@@ -72,8 +72,11 @@ nav.main a[aria-current="page"]{background:var(--peach);color:#09403A;opacity:1}
 .hero h1{font-size:var(--step-4);font-weight:500;letter-spacing:-.01em}
 .hero h1 em{font-style:italic;color:var(--peach)}
 .hero .lede{font-size:var(--step-1);line-height:1.5;max-width:34ch;opacity:.92}
-.hero canvas{width:100%;max-width:340px;aspect-ratio:1;justify-self:center}
-@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:2.5rem 3rem}.hero canvas{max-width:200px;order:-1}}
+.hero-logo{display:block;width:100%;max-width:340px;justify-self:center}
+.hero-logo img,.about-logo img{display:block;width:100%;height:auto;border-radius:12px}
+.about-logo{display:block;width:100%;max-width:320px;justify-self:center}
+.brand-logo{border-radius:6px;display:block}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:2.5rem 3rem}.hero-logo{max-width:200px;order:-1}}
 
 section.band{padding-block:3.5rem}
 section.band.alt{background:var(--peach-soft)}

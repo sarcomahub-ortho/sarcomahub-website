@@ -5,36 +5,6 @@
     btn.setAttribute('aria-expanded', String(open));
   });
 
-  // Mandala with the yellow sarcoma ribbon, drawn to match the logo
-  function drawMandala(id) {
-    var c = document.getElementById(id); if (!c) return;
-    var x = c.getContext('2d'), s = c.width, m = s / 2, onTeal = id === 'mandala';
-    var ink = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#0B2E2A';
-    x.clearRect(0, 0, s, s);
-    x.lineWidth = s / 340;
-    for (var ring = 0; ring < 5; ring++) {
-      var r = m * (0.32 + ring * 0.135);
-      x.globalAlpha = onTeal ? 1 : 0.25 + ring * 0.12;
-      x.strokeStyle = onTeal ? 'rgba(255,247,242,' + (0.25 + ring * 0.12) + ')' : ink;
-      x.beginPath(); x.arc(m, m, r, 0, Math.PI * 2); x.stroke();
-      var n = 12 + ring * 6;
-      for (var i = 0; i < n; i++) {
-        var a = i / n * Math.PI * 2 + (ring % 2 ? Math.PI / n : 0), r2 = r - m * 0.06;
-        x.beginPath(); x.moveTo(m + Math.cos(a) * r2, m + Math.sin(a) * r2); x.lineTo(m + Math.cos(a) * r, m + Math.sin(a) * r); x.stroke();
-        if (ring % 2 === 0) { x.beginPath(); x.arc(m + Math.cos(a) * (r - m * 0.075), m + Math.sin(a) * (r - m * 0.075), s / 170, 0, Math.PI * 2); x.stroke(); }
-      }
-    }
-    x.globalAlpha = 1; x.strokeStyle = '#E9B425'; x.lineCap = 'round'; x.lineWidth = s / 26;
-    var k = m * 0.0105;
-    x.beginPath(); x.moveTo(m, m - 24 * k); x.bezierCurveTo(m - 16 * k, m - 24 * k, m - 20 * k, m - 8 * k, m - 12 * k, m + 4 * k); x.lineTo(m + 10 * k, m + 28 * k); x.stroke();
-    x.beginPath(); x.moveTo(m, m - 24 * k); x.bezierCurveTo(m + 16 * k, m - 24 * k, m + 20 * k, m - 8 * k, m + 12 * k, m + 4 * k); x.lineTo(m - 10 * k, m + 28 * k); x.stroke();
-  }
-  drawMandala('mandala'); drawMandala('mandala2');
-  if (window.matchMedia) {
-    var mq = matchMedia('(prefers-color-scheme: dark)');
-    if (mq.addEventListener) mq.addEventListener('change', function () { drawMandala('mandala2'); });
-  }
-
   var copy = document.getElementById('copyPhone');
   if (copy) copy.addEventListener('click', function () {
     var num = '+91 9111 60 9222';
