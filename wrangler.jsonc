@@ -1,10 +1,14 @@
-// Cloudflare settings: serve this folder as a static site
+// Cloudflare settings: serve this folder as a static site.
+// worker.js shows a "coming soon" page on sarcomahub.com until launch.
 {
   "name": "sarcomahub-website",
+  "main": "worker.js",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
   "assets": {
     "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": true,
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   }
