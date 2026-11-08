@@ -16,7 +16,7 @@ import pathlib, re, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "tools" / "pages"
-V = "9"  # bump to make browsers fetch fresh CSS, JS and images
+V = "10"  # bump to make browsers fetch fresh CSS, JS and images
 
 NAV = [
     ("home", "/", "Home"),
@@ -62,6 +62,7 @@ HEAD = """<!doctype html>
     <nav class="main" id="mainNav" aria-label="Main">
 {nav}
     </nav>
+    <img class="brand-sig" src="/assets/logo-sh.svg?v={v}" width="751" height="654" alt="SH signature">
   </div>
 </header>
 <main id="main">

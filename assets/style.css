@@ -11,7 +11,7 @@
   --grey-3:#D4D4D4;   /* light grey: lines and borders */
   --grey-4:#F2F2F2;   /* pale grey: alternate bands */
   --white:#FFFFFF;
-  --gold:#A67C00;     /* deep logo yellow for the S and H on light backgrounds (3.8:1 on white) */
+  --red:#E10600;      /* the signature red: ONLY for the S and H letters and the signature (user request 2026-11-08) */
   --display:"EB Garamond", Garamond, Georgia, serif;
   --body:"Avenir", "Avenir LT Std", "Nunito Sans", "Segoe UI", system-ui, sans-serif;
   --step--1:.875rem; --step-0:1.0625rem; --step-1:1.3rem; --step-2:1.8rem; --step-3:2.4rem; --step-4:clamp(2.6rem,6vw,4.2rem);
@@ -38,16 +38,17 @@ p{margin:0}
 
 /* The S and H letters from the monogram */
 .wm{white-space:nowrap}
-.g{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:150%;font-size:inherit;background-color:var(--gold);vertical-align:baseline;
+.g{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:150%;font-size:inherit;background-color:var(--red);vertical-align:baseline;
    -webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .g-s{height:calc(var(--cap)*1.022);width:calc(var(--cap)*1.022*.659);margin:0 .01em calc(var(--cap)*-.011) 0;
      -webkit-mask-image:url(/assets/letter-s.svg?v=9);mask-image:url(/assets/letter-s.svg?v=9)}
 .g-h{height:var(--cap);width:calc(var(--cap)*.9425);margin:0 .015em 0 .02em;
      -webkit-mask-image:url(/assets/letter-h.svg?v=9);mask-image:url(/assets/letter-h.svg?v=9)}
 
-footer .g,.signs .g{background-color:var(--yellow)}
 
-/* Masthead */
+/* Masthead: mandala logo top left, SH signature top right */
+.brand-sig{display:block;height:44px;width:auto;flex:none;margin-left:.5rem}
+@media (max-width:900px){.brand-sig{height:38px;order:2}.menu-btn{order:1}}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--white);color:var(--black);border-bottom:1px solid var(--grey-3)}
 header.site .wrap{display:flex;align-items:center;gap:1rem;padding-block:.85rem}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
@@ -239,3 +240,11 @@ h3.sub{font-size:var(--step-2);font-weight:500;margin-top:1rem}
 .feature h3{font-size:var(--step-2);font-weight:500}
 @media (max-width:600px){ol.steps.icons li{grid-template-columns:2.6rem 1fr}ol.steps.icons li img{display:none}.figpair{max-width:none}}
 @media (prefers-reduced-motion:reduce){.contact-item{transition:none}}
+@media (max-width:480px){
+  header.site .wrap{gap:.6rem}
+  .brand{gap:.5rem}
+  .brand-logo{width:42px;height:42px}
+  .brand-name{font-size:1.5rem}
+  .brand-sig{height:30px;margin-left:0}
+  .menu-btn{padding:.5rem .85rem}
+}
