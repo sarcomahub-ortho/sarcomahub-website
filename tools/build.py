@@ -16,7 +16,7 @@ import pathlib, re, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "tools" / "pages"
-V = "8"  # bump to make browsers fetch fresh CSS, JS and images
+V = "9"  # bump to make browsers fetch fresh CSS, JS and images
 
 NAV = [
     ("home", "/", "Home"),

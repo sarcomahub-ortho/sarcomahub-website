@@ -41,9 +41,9 @@ p{margin:0}
 .g{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:150%;font-size:inherit;background-color:var(--gold);vertical-align:baseline;
    -webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .g-s{height:calc(var(--cap)*1.022);width:calc(var(--cap)*1.022*.659);margin:0 .01em calc(var(--cap)*-.011) 0;
-     -webkit-mask-image:url(/assets/letter-s.svg?v=7);mask-image:url(/assets/letter-s.svg?v=7)}
+     -webkit-mask-image:url(/assets/letter-s.svg?v=9);mask-image:url(/assets/letter-s.svg?v=9)}
 .g-h{height:var(--cap);width:calc(var(--cap)*.9425);margin:0 .015em 0 .02em;
-     -webkit-mask-image:url(/assets/letter-h.svg?v=7);mask-image:url(/assets/letter-h.svg?v=7)}
+     -webkit-mask-image:url(/assets/letter-h.svg?v=9);mask-image:url(/assets/letter-h.svg?v=9)}
 
 footer .g,.signs .g{background-color:var(--yellow)}
 
