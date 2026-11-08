@@ -6,7 +6,7 @@
 <title>SarcomaHub | Coming soon</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="SarcomaHub, a resource on bone and soft tissue tumours, is coming soon.">
-<meta name="theme-color" content="#FEDC34">
+<meta name="theme-color" content="#111111">
 <meta property="og:title" content="SarcomaHub | Coming soon">
 <meta property="og:image" content="https://www.sarcomahub.com/assets/og-image.jpg">
 <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
@@ -18,23 +18,24 @@
 :root{--black:#111;--yellow:#FEDC34;--grey:#3A3A3A;--cap:.655em}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%}
-body{min-height:100vh;display:flex;flex-direction:column;font-family:"Avenir","Nunito Sans",system-ui,sans-serif;color:var(--black);background:var(--yellow);line-height:1.6}
+body{min-height:100vh;display:flex;flex-direction:column;font-family:"Avenir","Nunito Sans",system-ui,sans-serif;color:var(--black);background:#F2F2F2;line-height:1.6}
 main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 16px;gap:18px}
-.logo{width:min(240px,55vw);height:auto;display:block;margin-bottom:12px}
+.logo{width:min(220px,55vw);display:block;margin-bottom:12px}
+.logo img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:0 14px 34px rgba(17,17,17,.16)}
 h1{font-family:"EB Garamond",Garamond,Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:0}
 p{margin:0;max-width:38ch;font-size:1.15rem;color:var(--grey)}
 .contact{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px}
-.contact a{background:var(--black);color:var(--yellow);font-weight:800;text-decoration:none;padding:10px 20px;border-radius:999px}
+.contact a{background:var(--black);color:#fff;font-weight:800;text-decoration:none;padding:10px 20px;border-radius:999px}
 .wm{white-space:nowrap}
 .g{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:150%;background-color:currentColor;vertical-align:baseline;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
 .g-s{height:calc(var(--cap)*1.022);width:calc(var(--cap)*1.022*.659);margin:0 .01em calc(var(--cap)*-.011) 0;-webkit-mask-image:url(/assets/letter-s.svg);mask-image:url(/assets/letter-s.svg)}
 .g-h{height:var(--cap);width:calc(var(--cap)*.9425);margin:0 .015em 0 .02em;-webkit-mask-image:url(/assets/letter-h.svg);mask-image:url(/assets/letter-h.svg)}
-.stripe{height:10px;background:var(--black)}
+.stripe{height:6px;background:var(--yellow)}
 </style>
 </head>
 <body>
 <main>
-  <img class="logo" src="/assets/logo-sh.svg" width="751" height="654" alt="SarcomaHub SH monogram">
+  <picture class="logo"><source srcset="/assets/logo-800.webp" type="image/webp"><img src="/assets/logo-800.jpg" width="800" height="800" alt="SarcomaHub logo: a mandala with the yellow sarcoma ribbon"></picture>
   <h1><span class="wm"><span class="g g-s">S</span>arcoma<span class="g g-h">H</span>ub</span> is coming soon</h1>
   <p>We are building a new home for clear information and support on bone and soft tissue tumours.</p>
   <p>If you need help now, please get in touch.</p>

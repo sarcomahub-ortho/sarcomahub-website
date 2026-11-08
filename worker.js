@@ -3,7 +3,7 @@
 // To launch: set PUBLIC_LAUNCH to true (or delete this file and "main" from wrangler.jsonc).
 const PUBLIC_LAUNCH = false;
 const PUBLIC_HOSTS = new Set(["sarcomahub.com", "www.sarcomahub.com"]);
-const SHARED = ["/assets/logo-sh.svg", "/assets/letter-s.svg", "/assets/letter-h.svg", "/assets/favicon-32.png", "/assets/apple-touch-icon.png", "/assets/og-image.jpg"];
+const SHARED = ["/assets/logo-800.webp", "/assets/logo-800.jpg", "/assets/letter-s.svg", "/assets/letter-h.svg", "/assets/favicon-32.png", "/assets/apple-touch-icon.png", "/assets/og-image.jpg"];
 
 export default {
   async fetch(request, env) {
