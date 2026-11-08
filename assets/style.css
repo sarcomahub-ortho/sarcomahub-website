@@ -40,9 +40,9 @@ p{margin:0}
 .g{display:inline-block;overflow:hidden;white-space:nowrap;text-indent:150%;font-size:inherit;background-color:currentColor;vertical-align:baseline;
    -webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .g-s{height:calc(var(--cap)*1.022);width:calc(var(--cap)*1.022*.659);margin:0 .01em calc(var(--cap)*-.011) 0;
-     -webkit-mask-image:url(/assets/letter-s.svg);mask-image:url(/assets/letter-s.svg)}
+     -webkit-mask-image:url(/assets/letter-s.svg?v=7);mask-image:url(/assets/letter-s.svg?v=7)}
 .g-h{height:var(--cap);width:calc(var(--cap)*.9425);margin:0 .015em 0 .02em;
-     -webkit-mask-image:url(/assets/letter-h.svg);mask-image:url(/assets/letter-h.svg)}
+     -webkit-mask-image:url(/assets/letter-h.svg?v=7);mask-image:url(/assets/letter-h.svg?v=7)}
 
 /* Masthead */
 .topbar{background:var(--black);color:var(--grey-3);font-size:var(--step--1)}
