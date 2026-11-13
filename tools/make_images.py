@@ -5,9 +5,13 @@ import pathlib
 OUT = pathlib.Path(__file__).resolve().parent.parent / "assets" / "img"
 OUT.mkdir(parents=True, exist_ok=True)
 
-INK, G1, G2, G3, G4, Y = "#111111", "#3A3A3A", "#6E6E6E", "#D4D4D4", "#F2F2F2", "#FEDC34"
+INK, G1, G2, G3, G4, Y = "#3A3A3A", "#3A3A3A", "#6E6E6E", "#D4D4D4", "#F2F2F2", "#D4D4D4"  # brand book: fine grey line, no colour
 
 def svg(name, vb, body, title):
+    import re as _re
+    body = _re.sub(r'<rect width="\d+" height="\d+" rx="\d+" fill="#F2F2F2"/>', '', body, count=1)  # no panel behind drawings
+    body = _re.sub(r'stroke-width="([\d.]+)"', lambda m: f'stroke-width="{max(1.0, float(m.group(1))*0.55):.2f}"', body)
+    body = body.replace("Avenir, Nunito Sans", "Jost, Century Gothic")
     OUT.joinpath(name + ".svg").write_text(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" role="img" aria-label="{title}">'
         f'<title>{title}</title>{body}</svg>')
@@ -35,7 +39,7 @@ def blob(cx, cy, rx, ry, sw=3, fill=Y):
 
 def label(x, y, text, anchor="start", size=13):
     return (f'<text x="{x}" y="{y}" font-family="Avenir, Nunito Sans, sans-serif" font-size="{size}" '
-            f'font-weight="700" fill="{G1}" text-anchor="{anchor}">{text}</text>')
+            f'font-weight="400" letter-spacing=".04em" fill="{G2}" text-anchor="{anchor}">{text}</text>')
 
 def leader(x1, y1, x2, y2):
     return f'<path d="M{x1} {y1}L{x2} {y2}" stroke="{G2}" stroke-width="1.5"/><circle cx="{x1}" cy="{y1}" r="3" fill="{INK}"/>'
@@ -57,8 +61,8 @@ svg("what-soft", "0 0 260 320",
     f'<path d="M60 60C90 90 92 160 70 250M200 60C170 100 168 170 192 250" stroke="{G3}" stroke-width="2" fill="none"/>'
     + bone(98, 18, 0.95, fill=G4)
     + blob(194, 150, 16, 34)
-    + leader(194, 128, 232, 40) + label(246, 32, "Tumour", "end")
-    + leader(122, 100, 60, 40) + label(24, 32, "Bone", "start"),
+    + leader(194, 128, 230, 30) + label(256, 20, "Tumour", "end")
+    + leader(122, 100, 40, 30) + label(6, 20, "Bone", "start"),
     "A thigh with a tumour growing in the muscle beside the bone")
 
 # ---------- 3. small icons for common types (96 x 96) ----------
@@ -178,7 +182,7 @@ svg("r-3d", "0 0 200 260",
 print("images written to", OUT)
 
 # ---------- 8. warm illustrations for the families page (320 x 240) ----------
-def person(x, y, s=1.0, body=G3, head="#fff", accent=False):
+def person(x, y, s=1.0, body="#fff", head="#fff", accent=False):
     """A simple figure: round head and rounded shoulders. (x, y) is the top of the head."""
     r = 20 * s
     b = (f'<path d="M{x-34*s} {y+110*s}C{x-34*s} {y+62*s} {x-22*s} {y+48*s} {x} {y+48*s}'

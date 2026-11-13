@@ -16,7 +16,7 @@ import pathlib, re, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "tools" / "pages"
-V = "10"  # bump to make browsers fetch fresh CSS, JS and images
+V = "11"  # bump to make browsers fetch fresh CSS, JS and images
 
 NAV = [
     ("home", "/", "Home"),
@@ -42,12 +42,12 @@ HEAD = """<!doctype html>
 <meta property="og:url" content="https://www.sarcomahub.com{path}">
 <meta property="og:image" content="https://www.sarcomahub.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/assets/favicon-32.png?v={v}" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v={v}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,800;0,6..12,900;1,6..12,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,400&display=swap">
 <link rel="stylesheet" href="/assets/style.css?v={v}">
 {extra}</head>
 <body>
@@ -55,7 +55,7 @@ HEAD = """<!doctype html>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="/" aria-label="SarcomaHub home">
-      <img class="brand-logo" src="/assets/logo-96.png?v={v}" width="56" height="56" alt="">
+      <img class="brand-logo" src="/assets/logo-96.png?v={v}" width="52" height="52" alt="SarcomaHub logo">
       <b class="brand-name">SarcomaHub</b>
     </a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
